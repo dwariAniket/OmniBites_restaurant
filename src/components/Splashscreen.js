@@ -27,10 +27,24 @@ const SplashScreen = () => {
       zIndex: 9999
     }}>
       <div style={{
-        fontSize: '5rem',
+        fontSize: '5rem', // Default for large screens
         fontWeight: 'bold',
         color: '#FFD700',
-        animation: 'fadeScale 4s ease-in-out'
+        animation: 'fadeScale 4s ease-in-out',
+        textAlign: 'center',
+        // Responsive font sizes
+        '@media (max-width: 1200px)': {
+          fontSize: '4rem'
+        },
+        '@media (max-width: 768px)': {
+          fontSize: '3rem'
+        },
+        '@media (max-width: 480px)': {
+          fontSize: '2.5rem'
+        },
+        '@media (max-width: 320px)': {
+          fontSize: '2rem'
+        }
       }}>
         🍽️ Omnibites
       </div>
