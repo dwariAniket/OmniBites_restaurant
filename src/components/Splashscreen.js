@@ -14,59 +14,76 @@ const SplashScreen = () => {
   }, [navigate]);
 
   return (
-    <div style={{
-      position: 'fixed',
-      top: 0,
-      left: 0,
-      width: '100vw',
-      height: '100vh',
-      backgroundColor: '#8B0000',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      zIndex: 9999
-    }}>
-      <div style={{
-        fontSize: '5rem', // Default for large screens
-        fontWeight: 'bold',
-        color: '#FFD700',
-        animation: 'fadeScale 4s ease-in-out',
-        textAlign: 'center',
-        // Responsive font sizes
-        '@media (max-width: 1200px)': {
-          fontSize: '4rem'
-        },
-        '@media (max-width: 768px)': {
-          fontSize: '3rem'
-        },
-        '@media (max-width: 480px)': {
-          fontSize: '2.5rem'
-        },
-        '@media (max-width: 320px)': {
-          fontSize: '2rem'
-        }
-      }}>
+    <div className="splash-container">
+      <div className="splash-content">
         🍽️ Omnibites
       </div>
 
-      <style>
-        {`
-          @keyframes fadeScale {
-            0% { 
-              opacity: 0;
-              transform: scale(0.8);
-            }
-            50% { 
-              opacity: 1;
-              transform: scale(1.1);
-            }
-            100% { 
-              opacity: 1;
-              transform: scale(1);
-            }
+      <style jsx>{`
+        .splash-container {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 100vh;
+          background-color: #8B0000;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999;
+        }
+
+        .splash-content {
+          font-size: 5rem;
+          font-weight: bold;
+          color: #FFD700;
+          animation: fadeScale 4s ease-in-out;
+          text-align: center;
+        }
+
+        /* Large tablets and small laptops */
+        @media (max-width: 1200px) {
+          .splash-content {
+            font-size: 4rem;
           }
-        `}
-      </style>
+        }
+
+        /* Tablets */
+        @media (max-width: 768px) {
+          .splash-content {
+            font-size: 3rem;
+          }
+        }
+
+        /* Mobile phones */
+        @media (max-width: 480px) {
+          .splash-content {
+            font-size: 2.5rem;
+          }
+        }
+
+        /* Small mobile phones */
+        @media (max-width: 320px) {
+          .splash-content {
+            font-size: 2rem;
+          }
+        }
+
+        @keyframes fadeScale {
+          0% { 
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          50% { 
+            opacity: 1;
+            transform: scale(1.1);
+          }
+          100% { 
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+      `}</style>
     </div>
   );
 };
